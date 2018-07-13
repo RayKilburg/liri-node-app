@@ -1,0 +1,40 @@
+{ album:
+   { album_type: 'album',
+     artists: [ [Object] ],
+     available_markets:
+      [ ],
+     external_urls:
+      { spotify: 'https://open.spotify.com/album/2k8N8D3YBi9Xc9iQEmTARx' },
+     href: 'https://api.spotify.com/v1/albums/2k8N8D3YBi9Xc9iQEmTARx',
+     id: '2k8N8D3YBi9Xc9iQEmTARx',
+     images: [ [Object], [Object], [Object] ],
+     name: 'I Walk the Line (Original Soundtrack Recording)',
+     release_date: '1970',
+     release_date_precision: 'year',
+     type: 'album',
+     uri: 'spotify:album:2k8N8D3YBi9Xc9iQEmTARx' },
+  artists:
+   [ { external_urls: [Object],
+       href: 'https://api.spotify.com/v1/artists/6kACVPfCOnqzgfEF5ryl0x',
+       id: '6kACVPfCOnqzgfEF5ryl0x',
+       name: 'Johnny Cash',
+       type: 'artist',
+       uri: 'spotify:artist:6kACVPfCOnqzgfEF5ryl0x' } ],
+  available_markets:
+   [ ],
+  disc_number: 1,
+  duration_ms: 176533,
+  explicit: false,
+  external_ids: { isrc: 'USSM19902102' },
+  external_urls:
+   { spotify: 'https://open.spotify.com/track/7hxZF4jETnE5Q75rKQnMjE' },
+  href: 'https://api.spotify.com/v1/tracks/7hxZF4jETnE5Q75rKQnMjE',
+  id: '7hxZF4jETnE5Q75rKQnMjE',
+  is_local: false,
+  name: 'I Walk the Line',
+  popularity: 71,
+  preview_url: 'https://p.scdn.co/mp3-preview/540c0262ddb121816bb5a98c7d2cae9dcbe03be1?cid=315ee638818643dda9d659471a852f78',
+  track_number: 2,
+  type: 'track',
+  uri: 'spotify:track:7hxZF4jETnE5Q75rKQnMjE' }
+-------------
