@@ -1,4 +1,7 @@
 require("dotenv").config();
+var inquirer = require('inquirer');
+var request = require('request');
+var Spotify = require('node-spotify-api');
 //inquirer
 
 // Make it so liri.js can take in one of the following commands:
@@ -49,38 +52,40 @@ for (let i = 0; i < tweets.length; i++) {
 //OMBD///////////////////////////
 
 // Take a move with multiple words (ex: Forrest Gump) as a Node argument
-// var movieName = "";
-// for(var i = 2; i < process.argv.length; i++){
-//     movieName += process.argv[i];
-//     delim = "+"
-// }
+var movieName = "";
+for(var i = 2; i < process.argv.length; i++){
+    movieName += process.argv[i];
+    delim = "+"
+}
 // Include the request npm package 
-// var request = require("request");
-// request("http://www.omdbapi.com/?t=remember+the+titans&y=&plot=short&apikey=trilogy", function(error, response, body) {
+var request = require("request");
+request("http://www.omdbapi.com/?t=remember+the+titans&y=&plot=short&apikey=trilogy", function(error, response, body) {
 
 // Then run a request to the OMDB API with the movie specified
 
-// var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
+var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
 
-// console.log(JSON.parse(body).Title);
+console.log(JSON.parse(body).Title);
+});
 
 //SPOTIFY/////////////////////////
 
 // * `spotify-this-song`
-// search: function({ type: 'artist OR album OR track', query: 'My search query', limit: 20 }, callback);
 
 
-// var Spotify = require('node-spotify-api');
+
+var Spotify = require('node-spotify-api');
  
-// var spotify = new Spotify({
-//   id: <your spotify client id>,
-//   secret: <your spotify client secret>
-// });
+var spotify = new Spotify({
+  id: "315ee638818643dda9d659471a852f78",
+  secret: "07735ab4760c4c458a7dbb205c564052"
+});
  
-// spotify.search({ type: 'track', query: 'All the Small Things' }, function(err, data) {
-//   if (err) {
-//     return console.log('Error occurred: ' + err);
-//   }
+spotify.search({ type: 'track', query: 'All the Small Things' }, function(err, data) {
+  if (err) {
+    return console.log('Error occurred: ' + err);
+  }
  
-// console.log(data); 
-//  });
+console.log(data); 
+ });
+
