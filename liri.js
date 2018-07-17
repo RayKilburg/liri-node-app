@@ -18,6 +18,7 @@ function runProgram() {
   }
 }
 
+//twitter function
 function twitter(screenName) {
   var client = new Twitter({
     consumer_key: "KSRVxN58CVOuICI2z1vpVrIJn",
@@ -33,7 +34,6 @@ function twitter(screenName) {
     response
   ) {
     if (!error) {
-      // console.log(tweets);
       for (let i = 0; i < tweets.length; i++) {
         console.log(tweets[i].text);
       }
@@ -41,13 +41,8 @@ function twitter(screenName) {
   });
 }
 
-//OMBD///////////////////////////
+//OMBD movie db function
 function ombd(movieName) {
-  // for (var i = 2; i < process.argv.length; i++) {
-  //   movieName += process.argv[i];
-  //   delim = "+";
-  // }
-  // Include the request npm package
 
   request(
     "http://www.omdbapi.com/?t="+ movieName +"&y=&plot=short&apikey=trilogy",
@@ -60,14 +55,16 @@ function ombd(movieName) {
         "&y=&plot=short&apikey=trilogy";
 
       console.log(JSON.parse(body).Title);
+      console.log(JSON.parse(body).Rated);
+      console.log(JSON.parse(body).Year);
+      console.log(JSON.parse(body).Genre);
+      console.log(JSON.parse(body).Director);
       console.log("---------------");
     }
   );
 }
 
-//SPOTIFY/////////////////////////
-
-// * `spotify-this-song`
+//SPOTIFY function 
 
 function muzik(title) {
   var spotify = new Spotify({
