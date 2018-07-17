@@ -5,7 +5,7 @@ var Spotify = require("node-spotify-api");
 var Twitter = require("twitter");
 
 function runProgram() {
-  var input = process.argv[3]
+  var input = process.argv[3];
   if (process.argv[2] === "movie-this") {
     ombd(input);
   }
@@ -27,7 +27,10 @@ function twitter(screenName) {
     access_token_secret: "mI3oFPIAswenxx7bn2UG5efbJYu6qCy847EfE8MA0ixzs"
   });
 
-  var params = { screen_name: !screenName ? "Justane56100469" : screenName, count: 20 };
+  var params = {
+    screen_name: !screenName ? "Justane56100469" : screenName,
+    count: 20
+  };
   client.get("statuses/user_timeline", params, function(
     error,
     tweets,
@@ -43,9 +46,8 @@ function twitter(screenName) {
 
 //OMBD movie db function
 function ombd(movieName) {
-
   request(
-    "http://www.omdbapi.com/?t="+ movieName +"&y=&plot=short&apikey=trilogy",
+    "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy",
     function(error, response, body) {
       // Then run a request to the OMDB API with the movie specified
 
@@ -54,6 +56,7 @@ function ombd(movieName) {
         movieName +
         "&y=&plot=short&apikey=trilogy";
 
+      console.log("---------------");
       console.log(JSON.parse(body).Title);
       console.log(JSON.parse(body).Rated);
       console.log(JSON.parse(body).Year);
@@ -64,7 +67,7 @@ function ombd(movieName) {
   );
 }
 
-//SPOTIFY function 
+//SPOTIFY function
 
 function muzik(title) {
   var spotify = new Spotify({
@@ -72,10 +75,7 @@ function muzik(title) {
     secret: "07735ab4760c4c458a7dbb205c564052"
   });
 
-  spotify.search({ type: "track", query: title }, function(
-    err,
-    data
-  ) {
+  spotify.search({ type: "track", query: title }, function(err, data) {
     if (err) {
       return console.log("Error occurred: " + err);
     }
